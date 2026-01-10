@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VideoFlix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1>🎬 VideoFlix</h1>
+  <input
+    id="search"
+    type="text"
+    placeholder="Search movies or series..."
+    oninput="searchVideos()"
+  >
+</header>
+
+<div id="content"></div>
+
+<!-- Video Player -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <iframe id="player" allowfullscreen allow="autoplay"></iframe>
+</div>
+
+<!-- Series Episode Panel -->
+<div id="seriesPanel" class="series-panel">
+  <div class="series-content">
+    <span class="close" onclick="closeSeries()">×</span>
+    <h2 id="seriesTitle"></h2>
+    <div id="episodeList" class="episode-list"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #000;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar h1 {
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.navbar input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+/* CATEGORY SECTION */
+.category {
+  margin: 16px;
+}
+
+.category h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* ROW (HORIZONTAL SCROLL) */
+.row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+/* POSTER TILE */
+.tile {
+  width: 170px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+}
+
+.tile {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tile:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 5;
+}
+
+/* POSTER IMAGE */
+.tile img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+/* DARK GRADIENT */
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 55%,
+    rgba(0,0,0,0.95) 100%
+  );
+  z-index: 1;
+}
+
+/* TEXT OVERLAY */
+.tile-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 2;
+}
+
+.tile-title {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.tile-meta {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* PLAYER MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1000;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* SERIES PANEL */
+.series-panel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1100;
+  overflow-y: auto;
+}
+
+.series-content {
+  padding: 16px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.series-content h2 {
+  font-size: 22px;
+}
+
+.series-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+/* EPISODES */
+.episode-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.episode {
+  padding: 14px;
+  background: #222;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.episode:active {
+  background: #333;
+}
+
+/* DESKTOP ENHANCEMENTS */
+@media (min-width: 768px) {
+  .tile {
+    width: 200px;
+  }
+
+  .tile img {
+    height: 300px;
+  }
+
+  .navbar h1 {
+    font-size: 22px;
+  }
+
+  .category h2 {
+    font-size: 20px;
+  }
+}
