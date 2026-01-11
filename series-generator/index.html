@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Series data.js Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+    }
+    button {
+      background: #e50914;
+      color: #fff;
+      cursor: pointer;
+    }
+    .copy-btn {
+      background: #2ecc71;
+      margin-top: 10px;
+    }
+    .episode-block {
+      border: 1px solid #333;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+    textarea {
+      height: 350px;
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .status {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #2ecc71;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎬 Series data.js Generator</h2>
+
+<input id="seriesId" placeholder="Series ID (e.g. tapan)">
+<input id="seriesName" placeholder="Series Name (e.g. Bade Achhe Lagte Hai)">
+<input id="categoryInput" placeholder="Category (e.g. Ullu)">
+<input id="seriesThumb" placeholder="Series Thumbnail Path">
+
+<input id="episodeCount" type="number" min="1" placeholder="Number of Episodes">
+<button onclick="generateEpisodeInputs()">Generate Episode Inputs</button>
+
+<div id="episodes"></div>
+
+<button onclick="generateCode()">Generate Code</button>
+
+<textarea id="output" placeholder="Generated code will appear here..."></textarea>
+
+<button class="copy-btn" onclick="copyCode()">📋 Copy Code</button>
+<div id="status" class="status">✔ Code copied to clipboard</div>
+
+<script>
+function generateEpisodeInputs() {
+  const count = Number(document.getElementById("episodeCount").value);
+  const container = document.getElementById("episodes");
+  container.innerHTML = "";
+
+  if (!count || count < 1) {
+    alert("Enter valid episode count");
+    return;
+  }
+
+  for (let i = 1; i <= count; i++) {
+    container.innerHTML += `
+      <div class="episode-block">
+        <b>Episode ${i}</b>
+        <input id="ep-thumb-${i}" placeholder="Episode Thumbnail Path">
+        <input id="ep-embed-${i}" placeholder="Episode Embed Link">
+      </div>
+    `;
+  }
+}
+
+function generateCode() {
+  const id = document.getElementById("seriesId").value.trim();
+  const seriesName = document.getElementById("seriesName").value.trim();
+  const category = document.getElementById("categoryInput").value.trim();
+  const thumb = document.getElementById("seriesThumb").value.trim();
+  const count = Number(document.getElementById("episodeCount").value);
+
+  if (!id || !seriesName || !category || !thumb || !count) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  let episodesCode = "";
+
+  for (let i = 1; i <= count; i++) {
+    const epThumb = document.getElementById(`ep-thumb-${i}`).value.trim();
+    const embed = document.getElementById(`ep-embed-${i}`).value.trim();
+
+    episodesCode +=
+`      {
+        title: "${seriesName} Part-${i}",
+        thumb: "${epThumb}",
+        embed: "${embed}"
+      }${i < count ? "," : ""}\n`;
+  }
+
+  const finalCode =
+`  {
+    type: "series",
+    id: "${id}",
+    name: "${seriesName}",
+    category: "${category}",
+    thumb: "${thumb}",
+
+    episodes: [
+${episodesCode}    ]
+  },`;
+
+  document.getElementById("output").value = finalCode;
+  document.getElementById("status").style.display = "none";
+}
+
+function copyCode() {
+  const output = document.getElementById("output");
+  if (!output.value) {
+    alert("Nothing to copy");
+    return;
+  }
+
+  output.select();
+  output.setSelectionRange(0, 99999); // mobile support
+  document.execCommand("copy");
+
+  const status = document.getElementById("status");
+  status.style.display = "block";
+
+  setTimeout(() => {
+    status.style.display = "none";
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
