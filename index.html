@@ -9,7 +9,13 @@
 <body>
 
 <header class="navbar">
-  <h1>🎬 VideoFlix</h1>
+  <div class="nav-top">
+    <h1>🎬 VideoFlix</h1>
+
+    <a href="/series-generator/" target="_blank" class="generator-link">
+      ➕
+    </a>
+  </div>
 
   <input
     id="search"
@@ -17,10 +23,6 @@
     placeholder="Search movies or series..."
     oninput="searchVideos()"
   >
-
-  <a href="/series-generator/" target="_blank" class="generator-link">
-    ➕ Series Generator
-  </a>
 </header>
 
 
@@ -45,4 +47,5 @@
 <script src="js/app.js"></script>
 </body>
 </html>
+
 
