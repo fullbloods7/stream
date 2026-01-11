@@ -159,13 +159,36 @@ body {
   height: 100%;
 }
 
+/* ✅ LARGE THUMB-FRIENDLY CLOSE BUTTON */
 .close {
   position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 30px;
+  bottom: 16px;
+  right: 16px;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  font-weight: bold;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+
   cursor: pointer;
   z-index: 1100;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.close:active {
+  background: rgba(255,255,255,0.2);
+  transform: scale(0.95);
 }
 
 /* ================= SERIES PANEL ================= */
@@ -239,5 +262,20 @@ body {
 
   .category h2 {
     font-size: 20px;
+  }
+
+  /* Smaller close button on desktop */
+  .close {
+    top: 12px;
+    right: 18px;
+    bottom: auto;
+
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .close:hover {
+    background: rgba(255,255,255,0.25);
   }
 }
