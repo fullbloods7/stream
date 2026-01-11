@@ -10,29 +10,56 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
+
 .navbar {
   background: #000;
   padding: 12px 16px;
   display: flex;
+  flex-direction: column;          /* MOBILE FIRST */
+  align-items: stretch;
+  gap: 10px;
+}
+
+/* TOP ROW (TITLE + BUTTON) */
+.nav-top {
+  display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
 }
 
 .navbar h1 {
   font-size: 18px;
+  margin: 0;
   white-space: nowrap;
 }
 
+/* SEARCH */
 .navbar input {
-  flex: 1;
+  width: 100%;
   padding: 8px 10px;
   border-radius: 4px;
   border: none;
   outline: none;
 }
 
-/* CATEGORY SECTION */
+/* GENERATOR BUTTON */
+.generator-link {
+  padding: 6px 10px;
+  background: #e50914;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.generator-link:hover {
+  background: #f6121d;
+}
+
+/* ================= CATEGORY ================= */
+
 .category {
   margin: 16px;
 }
@@ -42,7 +69,8 @@ body {
   margin-bottom: 10px;
 }
 
-/* ROW (HORIZONTAL SCROLL) */
+/* ================= ROW ================= */
+
 .row {
   display: flex;
   gap: 14px;
@@ -54,7 +82,8 @@ body {
   display: none;
 }
 
-/* POSTER TILE */
+/* ================= TILE ================= */
+
 .tile {
   width: 170px;
   flex-shrink: 0;
@@ -63,9 +92,6 @@ body {
   overflow: hidden;
   cursor: pointer;
   background: #000;
-}
-
-.tile {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -118,7 +144,8 @@ body {
   margin-top: 4px;
 }
 
-/* PLAYER MODAL */
+/* ================= PLAYER MODAL ================= */
+
 .modal {
   display: none;
   position: fixed;
@@ -141,7 +168,8 @@ body {
   z-index: 1100;
 }
 
-/* SERIES PANEL */
+/* ================= SERIES PANEL ================= */
+
 .series-panel {
   display: none;
   position: fixed;
@@ -161,14 +189,8 @@ body {
   font-size: 22px;
 }
 
-.series-content select {
-  width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-  font-size: 16px;
-}
+/* ================= EPISODES ================= */
 
-/* EPISODES */
 .episode-list {
   display: flex;
   flex-wrap: wrap;
@@ -186,8 +208,23 @@ body {
   background: #333;
 }
 
-/* DESKTOP ENHANCEMENTS */
+/* ================= DESKTOP ENHANCEMENTS ================= */
+
 @media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-top {
+    gap: 12px;
+  }
+
+  .navbar input {
+    max-width: 300px;
+    margin-left: 12px;
+  }
+
   .tile {
     width: 200px;
   }
@@ -203,20 +240,4 @@ body {
   .category h2 {
     font-size: 20px;
   }
-}
-
-
-.generator-link {
-  margin-left: 10px;
-  padding: 8px 12px;
-  background: #e50914;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.generator-link:hover {
-  background: #f6121d;
 }
