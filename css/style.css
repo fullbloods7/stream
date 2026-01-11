@@ -279,3 +279,31 @@ body {
     background: rgba(255,255,255,0.25);
   }
 }
+
+.category-title {
+  cursor: pointer;
+}
+
+.category-title:hover {
+  text-decoration: underline;
+  color: #e50914;
+}
+
+/* CATEGORY GRID VIEW */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+/* Slightly larger tiles in grid */
+.grid .tile {
+  width: 100%;
+}
+
+/* Desktop grid */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
