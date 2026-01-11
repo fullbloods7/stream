@@ -204,3 +204,19 @@ body {
     font-size: 20px;
   }
 }
+
+
+.generator-link {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: #e50914;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.generator-link:hover {
+  background: #f6121d;
+}
