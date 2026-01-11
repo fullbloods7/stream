@@ -1,5 +1,8 @@
 const content = document.getElementById("content");
 
+/* TRACK SOURCE */
+let fromSeries = false;
+
 /* INITIAL RENDER */
 renderHome(videos);
 
@@ -27,6 +30,7 @@ function renderHome(data) {
         if (item.type === "series") {
           openSeries(item);
         } else {
+          fromSeries = false;
           openPlayer(item.embed);
         }
       });
@@ -53,19 +57,32 @@ function createTile(row, title, thumb, onClick) {
 
 /* PLAYER */
 function openPlayer(link) {
-  document.getElementById("modal").style.display = "block";
-  document.getElementById("player").src = link + "?autoplay=1";
+  const modal = document.getElementById("modal");
+  const player = document.getElementById("player");
+
+  modal.style.display = "block";
+  player.src = link + "?autoplay=1";
 }
 
 function closeModal() {
-  document.getElementById("modal").style.display = "none";
-  document.getElementById("player").src = "";
+  const modal = document.getElementById("modal");
+  const player = document.getElementById("player");
+
+  modal.style.display = "none";
+  player.src = "";
+
+  /* RETURN TO EPISODE PANEL IF NEEDED */
+  if (fromSeries) {
+    document.getElementById("seriesPanel").style.display = "block";
+    fromSeries = false;
+  }
 }
 
 /* SERIES PANEL */
 function openSeries(series) {
+  const panel = document.getElementById("seriesPanel");
+  panel.style.display = "block";
   document.getElementById("seriesTitle").textContent = series.name;
-  document.getElementById("seriesPanel").style.display = "block";
 
   const list = document.getElementById("episodeList");
   list.innerHTML = "";
@@ -79,14 +96,21 @@ function openSeries(series) {
         <div class="tile-title">${ep.title}</div>
       </div>
     `;
+
     tile.onclick = () => {
-      closeSeries();
+      fromSeries = true;
+
+      /* HIDE SERIES PANEL WHILE PLAYING */
+      panel.style.display = "none";
+
       openPlayer(ep.embed);
     };
+
     list.appendChild(tile);
   });
 }
 
+/* CLOSE SERIES PANEL */
 function closeSeries() {
   document.getElementById("seriesPanel").style.display = "none";
 }
