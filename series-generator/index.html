@@ -56,7 +56,7 @@
 <input id="seriesId" placeholder="Series ID (e.g. tapan)">
 <input id="seriesName" placeholder="Series Name (e.g. Bade Achhe Lagte Hai)">
 <input id="categoryInput" placeholder="Category (e.g. Ullu)">
-<input id="seriesThumb" placeholder="Series Thumbnail Path">
+<input id="seriesThumb" placeholder="Series Thumbnail name (e.g. 2)">
 
 <input id="episodeCount" type="number" min="1" placeholder="Number of Episodes">
 <button onclick="generateEpisodeInputs()">Generate Episode Inputs</button>
@@ -85,7 +85,7 @@ function generateEpisodeInputs() {
     container.innerHTML += `
       <div class="episode-block">
         <b>Episode ${i}</b>
-        <input id="ep-thumb-${i}" placeholder="Episode Thumbnail Path">
+        <input id="ep-thumb-${i}" placeholder="Episode thumbnail name (e.g. ${i})">
         <input id="ep-embed-${i}" placeholder="Episode Embed Link">
       </div>
     `;
@@ -96,19 +96,23 @@ function generateCode() {
   const id = document.getElementById("seriesId").value.trim();
   const seriesName = document.getElementById("seriesName").value.trim();
   const category = document.getElementById("categoryInput").value.trim();
-  const thumb = document.getElementById("seriesThumb").value.trim();
+  const seriesThumbName = document.getElementById("seriesThumb").value.trim();
   const count = Number(document.getElementById("episodeCount").value);
 
-  if (!id || !seriesName || !category || !thumb || !count) {
+  if (!id || !seriesName || !category || !seriesThumbName || !count) {
     alert("Please fill all fields");
     return;
   }
 
+  const seriesThumb = `assets/thumbnails/${seriesThumbName}.jpg`;
+
   let episodesCode = "";
 
   for (let i = 1; i <= count; i++) {
-    const epThumb = document.getElementById(`ep-thumb-${i}`).value.trim();
+    const epThumbName = document.getElementById(`ep-thumb-${i}`).value.trim();
     const embed = document.getElementById(`ep-embed-${i}`).value.trim();
+
+    const epThumb = `assets/thumbnails/${epThumbName}.jpg`;
 
     episodesCode +=
 `      {
@@ -124,7 +128,7 @@ function generateCode() {
     id: "${id}",
     name: "${seriesName}",
     category: "${category}",
-    thumb: "${thumb}",
+    thumb: "${seriesThumb}",
 
     episodes: [
 ${episodesCode}    ]
@@ -142,7 +146,7 @@ function copyCode() {
   }
 
   output.select();
-  output.setSelectionRange(0, 99999); // mobile support
+  output.setSelectionRange(0, 99999);
   document.execCommand("copy");
 
   const status = document.getElementById("status");
