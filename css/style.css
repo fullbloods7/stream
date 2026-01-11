@@ -162,7 +162,7 @@ body {
 /* ✅ LARGE THUMB-FRIENDLY CLOSE BUTTON */
 .close {
   position: absolute;
-  bottom: 16px;
+  bottom: 56px;
   right: 16px;
 
   width: 44px;
