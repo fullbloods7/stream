@@ -6,9 +6,31 @@ let fromSeries = false;
 /* INITIAL RENDER */
 renderHome(videos);
 
+/* SEARCH FUNCTION */
+function searchVideos() {
+  const query = document.getElementById("search").value.toLowerCase().trim();
+
+  if (!query) {
+    renderHome(videos);
+    return;
+  }
+
+  const filtered = videos.filter(item =>
+    item.name.toLowerCase().includes(query) ||
+    item.category.toLowerCase().includes(query)
+  );
+
+  renderHome(filtered);
+}
+
 /* HOME SCREEN */
 function renderHome(data) {
   content.innerHTML = "";
+
+  if (!data.length) {
+    content.innerHTML = `<p style="padding:16px">No results found</p>`;
+    return;
+  }
 
   const categories = {};
 
@@ -71,7 +93,6 @@ function closeModal() {
   modal.style.display = "none";
   player.src = "";
 
-  /* RETURN TO EPISODE PANEL IF NEEDED */
   if (fromSeries) {
     document.getElementById("seriesPanel").style.display = "block";
     fromSeries = false;
@@ -99,10 +120,7 @@ function openSeries(series) {
 
     tile.onclick = () => {
       fromSeries = true;
-
-      /* HIDE SERIES PANEL WHILE PLAYING */
       panel.style.display = "none";
-
       openPlayer(ep.embed);
     };
 
