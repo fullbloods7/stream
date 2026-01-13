@@ -667,7 +667,118 @@ const videos = [
     category: "Porn",
     thumb: "assets/thumbnails/57.jpg",
     embed: "https://streamtape.com/e/rKvrXXkbeKib2LJ/"
+  },
+
+  {
+    type: "movie",
+    id: "Movie13391227201",
+    name: "1339122_720",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/ALMPoMy0kaTX8o4/2DjZM7MRmruZ998.jpg",
+    embed: "https://streamtape.com/e/ALMPoMy0kaTX8o4/1339122_720.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid1080p2",
+    name: "vid_1080p",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/apalRM1m2vFxRm4/zwm7ayzvG9tYDGm.jpg",
+    embed: "https://streamtape.com/e/apalRM1m2vFxRm4/vid_1080p.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie12478347203",
+    name: "1247834_720",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/jajkLK2xJ9SzBRy/oLbqYgvpejCJmqJ.jpg",
+    embed: "https://streamtape.com/e/jajkLK2xJ9SzBRy/1247834_720.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid720p4",
+    name: "vid_720p",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/Xwo4qLo16vCg3y/ALV2Keae7quXOOx.jpg",
+    embed: "https://streamtape.com/e/Xwo4qLo16vCg3y/vid_720p.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid720p5",
+    name: "vid_720p",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/xeJvjXBMBack4bw/y2DYR69R8Gc1Z27.jpg",
+    embed: "https://streamtape.com/e/xeJvjXBMBack4bw/vid_720p.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid720p6",
+    name: "vid_720p",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/4yJy9jJzOXIK4O7/KwZ4Z0QvRvu0O9X.jpg",
+    embed: "https://streamtape.com/e/4yJy9jJzOXIK4O7/vid_720p.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid720p7",
+    name: "vid_720p",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/aYaYOdQQQKFMvQ/81eK6Mq9pluo7Vd.jpg",
+    embed: "https://streamtape.com/e/aYaYOdQQQKFMvQ/vid_720p.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie720pH2648",
+    name: "720p.h264",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/Q19QVKMOBYs0DYy/p1RlDpXYPDsrmaz.jpg",
+    embed: "https://streamtape.com/e/Q19QVKMOBYs0DYy/720p.h264.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid720p9",
+    name: "vid_720p",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/qrvAebjbJxhz2AD/vV80zjl8pou4G6Z.jpg",
+    embed: "https://streamtape.com/e/qrvAebjbJxhz2AD/vid_720p.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie720pH26410",
+    name: "720p.h264",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/WXX4oePoWAubKdg/garGlGzmOOFJ1d.jpg",
+    embed: "https://streamtape.com/e/WXX4oePoWAubKdg/720p.h264.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie720pH26411",
+    name: "720p.h264",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/xbZdLera7eFkGoL/lxDQAJr10YSvPg.jpg",
+    embed: "https://streamtape.com/e/xbZdLera7eFkGoL/720p.h264.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie720pH26412",
+    name: "720p.h264",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/p8LeblVz84Tr40P/V0eyo43zgGIKdbM.jpg",
+    embed: "https://streamtape.com/e/p8LeblVz84Tr40P/720p.h264.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie25349113",
+    name: "253491",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/gRLlDRvwyAiqeyq/KWOvwW89b1h0Q20.jpg",
+    embed: "https://streamtape.com/e/gRLlDRvwyAiqeyq/253491.mp4"
+  },
+  {
+    type: "movie",
+    id: "Movie25347614",
+    name: "253476",
+    category: "Porn",
+    thumb: "https://thumb.tapecontent.net/thumb/4qAYje0ma8sKgam/vWgDJGvqDzI41WZ.jpg",
+    embed: "https://streamtape.com/e/4qAYje0ma8sKgam/253476.mp4"
   }
 ];
-
-
