@@ -1109,7 +1109,25 @@ const videos = [
       }
     ]
   },
+
+  {
+    type: "movie",
+    id: "MovieRidingTheBBCWave1",
+    name: "riding-the-bbc-wave_720m",
+    category: "Porn2",
+    thumb: "https://thumb.tapecontent.net/thumb/12RaKPZKQ2ieZz8/A1OZMPQQadiZGX.jpg",
+    embed: "https://streamtape.com/e/12RaKPZKQ2ieZz8/riding-the-bbc-wave_720m.mp4"
+  },
+  {
+    type: "movie",
+    id: "MovieVid720p2",
+    name: "vid_720p",
+    category: "Porn2",
+    thumb: "https://thumb.tapecontent.net/thumb/RQ3W6dZPvlCdWOv/3qW2xj7PM6UdZ6l.jpg",
+    embed: "https://streamtape.com/e/RQ3W6dZPvlCdWOv/vid_720p.mp4"
+  },
 ];
+
 
 
 
