@@ -883,8 +883,8 @@ const videos = [
     id: "MovieVid720p12",
     name: "vid_720p",
     category: "Porn",
-    thumb: "",
-    embed: "https://streamtape.com/e/7XKmdydAlaCAKPo/vid_720p.mp4"
+    thumb: "https://thumb.tapecontent.net/thumb/7XKmdydAlaCAKPo/KZWxvV3Pg0S0QOq.jpg",
+    embed: "https://drive.google.com/file/d/1XtBueTgs-bTAnLG2ekPMgvNUTHC-7Xzr/preview"
   },
   {
     type: "movie",
@@ -943,6 +943,7 @@ const videos = [
     embed: "https://streamtape.com/e/PJ9dV9OZxqiBZ0/vid_720p.mp4"
   }
 ];
+
 
 
 
