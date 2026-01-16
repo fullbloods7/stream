@@ -1109,7 +1109,7 @@ const videos = [
         title: "Tailor_Kaka_(2024)_S01 Part-1",
         thumb: "assets/thumbnails/58.jpg",
         embed: "https://streamtape.com/e/r4xGXZrWLJTy33"
-      }
+      },
       {
         title: "Tailor_Kaka_(2024)_S01 Part-2",
         thumb: "assets/thumbnails/59.jpg",
@@ -1118,6 +1118,7 @@ const videos = [
     ]
   },
 ];
+
 
 
 
