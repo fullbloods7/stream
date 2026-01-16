@@ -1088,14 +1088,6 @@ const videos = [
     thumb: "https://thumb.tapecontent.net/thumb/6RD0M8vWvjH9zZl/VxwKL9qlMqiKAj4.jpg",
     embed: "https://streamtape.com/e/6RD0M8vWvjH9zZl/188470.mp4"
   },
-  {
-    type: "movie",
-    id: "Movie18847019",
-    name: "188470",
-    category: "Porn2",
-    thumb: "https://thumb.tapecontent.net/thumb/YZ7GXyQOmWTpqG/paqbWRRLrvirQAM.jpg",
-    embed: "https://streamtape.com/e/YZ7GXyQOmWTpqG/188470.mp4"
-  },
 
   {
     type: "series",
@@ -1118,6 +1110,7 @@ const videos = [
     ]
   },
 ];
+
 
 
 
